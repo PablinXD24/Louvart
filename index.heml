@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louvart - Escola de Música</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- GSAP e ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <!-- Tilt.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Louvart</h1>
+            <p>Escola de Música</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <!-- Bolinha de Perfil -->
+        <div class="profile">
+            <div class="profile-icon" id="profile-icon">
+                <span class="material-icons">account_circle</span>
+            </div>
+            <div class="profile-dropdown" id="profile-dropdown">
+                <a href="#login">Login</a>
+                <a href="#cadastro">Cadastro</a>
+                <a href="#informacoes-perfil">Informações de Perfil</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section com Vídeo do YouTube como Fundo -->
+    <section class="hero">
+        <div id="video-background"></div>
+        <div class="hero-content">
+            <h2>Aprenda Música de Forma Inspiradora</h2>
+            <p>Descubra nossos cursos e faça parte da nossa comunidade musical.</p>
+            <a href="#cursos" class="btn">Conheça os Cursos</a>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="sobre">
+        <h2>Sobre Nós</h2>
+        <div class="sobre-content">
+            <p>A Louvart é uma escola de música dedicada a oferecer ensino de qualidade para todos os níveis. Nossos professores são experientes e apaixonados por música, prontos para ajudar você a alcançar seus objetivos.</p>
+            <img src="sobre.jpg" alt="Sobre Nós">
+        </div>
+    </section>
+
+    <!-- Cursos -->
+    <section id="cursos" class="cursos">
+        <h2>Nossos Cursos</h2>
+        <div class="curso-grid">
+            <div class="curso-card" data-tilt>
+                <img src="violao.jpg" alt="Violão">
+                <h3>Violão</h3>
+                <p>Aprenda do básico ao avançado com nossos professores especializados.</p>
+            </div>
+            <div class="curso-card" data-tilt>
+                <img src="piano.jpg" alt="Piano">
+                <h3>Piano</h3>
+                <p>Domine o piano com técnicas clássicas e contemporâneas.</p>
+            </div>
+            <div class="curso-card" data-tilt>
+                <img src="canto.jpg" alt="Canto">
+                <h3>Canto</h3>
+                <p>Desenvolva sua voz e técnica vocal com profissionais experientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" class="galeria">
+        <h2>Galeria</h2>
+        <div class="galeria-grid">
+            <img src="foto1.jpg" alt="Foto 1" class="galeria-item">
+            <img src="foto2.jpg" alt="Foto 2" class="galeria-item">
+            <img src="foto3.jpg" alt="Foto 3" class="galeria-item">
+            <img src="foto4.jpg" alt="Foto 4" class="galeria-item">
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contato">
+        <h2>Entre em Contato</h2>
+        <form>
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu E-mail" required>
+            <textarea placeholder="Sua Mensagem" required></textarea>
+            <button type="submit" class="btn-effect">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Louvart - Escola de Música. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Lightbox para Galeria -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Ícone de Bate-papo -->
+    <div id="chat-icon" class="chat-icon">
+        <span class="material-icons">chat</span>
+    </div>
+
+    <!-- Seta para Subir -->
+    <div id="scroll-to-top" class="scroll-to-top">
+        <span class="material-icons">arrow_upward</span>
+    </div>
+
+    <!-- Código do Tidio -->
+<script src="//code.tidio.co/pt0ilo1ppwq0b8x8zacgtvnnpcfjviuy.js" async></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
