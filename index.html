@@ -96,10 +96,10 @@
     <!-- Contato -->
     <section id="contato" class="contato">
         <h2>Entre em Contato</h2>
-        <form>
-            <input type="text" placeholder="Seu Nome" required>
-            <input type="email" placeholder="Seu E-mail" required>
-            <textarea placeholder="Sua Mensagem" required></textarea>
+        <form action="https://formspree.io/f/xblgjbrd" method="POST" enctype="multipart/form-data">
+            <input type="text" name="nome" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu E-mail" required>
+            <textarea name="mensagem" placeholder="Sua Mensagem" required></textarea>
             <button type="submit" class="btn-effect">Enviar</button>
         </form>
     </section>
