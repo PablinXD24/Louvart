@@ -20,36 +20,56 @@
             <h1>Louvart</h1>
             <p>Escola de Música</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#cursos">Cursos</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
         <!-- Bolinha de Perfil -->
         <div class="profile">
             <div class="profile-icon" id="profile-icon">
                 <span class="material-icons">account_circle</span>
             </div>
             <div class="profile-dropdown" id="profile-dropdown">
-                <a href="#login">Login</a>
-                <a href="#cadastro">Cadastro</a>
+                <a href="#login" id="open-login-popup">Login</a>
+                <a href="#cadastro" id="open-signup-popup">Cadastro</a>
                 <a href="#informacoes-perfil">Informações de Perfil</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section com Vídeo do YouTube como Fundo -->
-    <section class="hero">
-        <div id="video-background"></div>
-        <div class="hero-content">
-            <h2>Aprenda Música de Forma Inspiradora</h2>
-            <p>Descubra nossos cursos e faça parte da nossa comunidade musical.</p>
-            <a href="#cursos" class="btn">Conheça os Cursos</a>
+    <!-- Teclado de Piano (Menu Retrátil) -->
+    <div class="piano-menu" id="piano-menu">
+        <div class="piano-key" data-target="#cursos">
+            <span>Cursos</span>
         </div>
-    </section>
+        <div class="piano-key" data-target="#sobre">
+            <span>Sobre Nós</span>
+        </div>
+        <div class="piano-key" data-target="#galeria">
+            <span>Galeria</span>
+        </div>
+        <div class="piano-key" id="open-contact-popup">
+            <span>Contato</span>
+        </div>
+    </div>
+
+    <!-- Botão para abrir/fechar o teclado de piano -->
+    <div class="piano-toggle" id="piano-toggle">
+        <span class="material-icons">menu</span>
+    </div>
+
+  <!-- Hero Section com Vídeo de Fundo do YouTube -->
+<section class="hero">
+    <!-- Vídeo de fundo do YouTube -->
+    <iframe
+        id="video-background"
+        src="https://www.youtube.com/embed/KN2FdvE4qAk?autoplay=1&mute=1&loop=1&playlist=KN2FdvE4qAk"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+    ></iframe>
+    <div class="hero-content">
+        <h2>Aprenda Música de Forma Inspiradora</h2>
+        <p>Descubra nossos cursos e faça parte da nossa comunidade musical.</p>
+        <a href="#cursos" class="btn">Conheça os Cursos</a>
+    </div>
+</section>
 
     <!-- Sobre Nós -->
     <section id="sobre" class="sobre">
@@ -93,22 +113,6 @@
         </div>
     </section>
 
-   <!-- Contato -->
-<section id="contato" class="contato">
-    <h2>Entre em Contato</h2>
-    <form id="contact-form" action="https://formspree.io/f/xblgjbrd" method="POST">
-        <label>
-            Seu e-mail:
-            <input type="email" name="email" placeholder="Seu E-mail" required>
-        </label>
-        <label>
-            Sua mensagem:
-            <textarea name="message" placeholder="Sua Mensagem" required></textarea>
-        </label>
-        <button type="submit" class="btn-effect">Enviar</button>
-    </form>
-</section>
-
     <!-- Footer -->
     <footer>
         <p>&copy; 2023 Louvart - Escola de Música. Todos os direitos reservados.</p>
@@ -128,6 +132,67 @@
     <!-- Seta para Subir -->
     <div id="scroll-to-top" class="scroll-to-top">
         <span class="material-icons">arrow_upward</span>
+    </div>
+
+    <!-- Pop-up de Contato -->
+    <div id="contact-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Entre em Contato</h2>
+            <form id="contact-form" action="https://formspree.io/f/xblgjbrd" method="POST">
+                <label>
+                    Seu e-mail:
+                    <input type="email" name="email" placeholder="Seu E-mail" required>
+                </label>
+                <label>
+                    Sua mensagem:
+                    <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+                </label>
+                <button type="submit" class="btn-effect">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pop-up de Login -->
+    <div id="login-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <label>
+                    E-mail:
+                    <input type="email" name="email" placeholder="Seu E-mail" required>
+                </label>
+                <label>
+                    Senha:
+                    <input type="password" name="password" placeholder="Sua Senha" required>
+                </label>
+                <button type="submit" class="btn-effect">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pop-up de Cadastro -->
+    <div id="signup-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="signup-form">
+                <label>
+                    Nome:
+                    <input type="text" name="name" placeholder="Seu Nome" required>
+                </label>
+                <label>
+                    E-mail:
+                    <input type="email" name="email" placeholder="Seu E-mail" required>
+                </label>
+                <label>
+                    Senha:
+                    <input type="password" name="password" placeholder="Sua Senha" required>
+                </label>
+                <button type="submit" class="btn-effect">Cadastrar</button>
+            </form>
+        </div>
     </div>
 
     <script src="script.js"></script>
