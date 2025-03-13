@@ -74,24 +74,31 @@ buttons.forEach(button => {
 });
 
 // Feedback após envio do formulário
-const form = document.querySelector('.contato form');
+const form = document.getElementById('contact-form');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(form);
-    const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    });
+    console.log("Formulário enviado!"); // Log de depuração
 
-    if (response.ok) {
-        alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
-        form.reset(); // Limpa o formulário
-    } else {
-        alert("Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.");
+    const formData = new FormData(form);
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: new URLSearchParams(formData), // Usa URLSearchParams para enviar os dados
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+            form.reset(); // Limpa o formulário
+        } else {
+            alert("Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.");
+        }
+    } catch (error) {
+        console.error("Erro ao enviar o formulário:", error); // Log de depuração
+        alert("Erro de conexão. Verifique sua internet e tente novamente.");
     }
 });
