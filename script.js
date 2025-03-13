@@ -94,6 +94,39 @@ pianoKeys.forEach(key => {
     });
 });
 
+//quiz
+document.addEventListener('DOMContentLoaded', function() {
+    const questions = document.querySelectorAll('.quiz-question');
+    const resultSection = document.getElementById('quiz-result');
+    const resultInstrument = document.getElementById('result-instrument');
+    let totalPoints = 0;
+
+    questions.forEach(question => {
+        question.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                totalPoints += parseInt(button.getAttribute('data-points'));
+                question.style.display = 'none';
+                if (document.querySelectorAll('.quiz-question:not([style*="display: none"])').length === 0) {
+                    showResult();
+                }
+            });
+        });
+    });
+
+    function showResult() {
+        let instrument;
+        if (totalPoints <= 5) {
+            instrument = 'Violão';
+        } else if (totalPoints <= 10) {
+            instrument = 'Piano';
+        } else {
+            instrument = 'Canto';
+        }
+        resultInstrument.textContent = instrument;
+        resultSection.classList.remove('hidden');
+    }
+});
+
 // Abrir e fechar pop-ups
 const contactPopup = document.getElementById('contact-popup');
 const loginPopup = document.getElementById('login-popup');
