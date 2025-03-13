@@ -93,8 +93,42 @@ pianoKeys.forEach(key => {
         pianoMenu.classList.remove('open'); // Fecha o menu após clicar
     });
 });
+//quiz
+document.addEventListener('DOMContentLoaded', function() {
+    const questions = document.querySelectorAll('.quiz-question');
+    const resultSection = document.getElementById('quiz-result');
+    const resultInstrument = document.getElementById('result-instrument');
+    let totalPoints = 0;
 
+    questions.forEach(question => {
+        question.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                totalPoints += parseInt(button.getAttribute('data-points'));
+                question.style.display = 'none';
+                if (document.querySelectorAll('.quiz-question:not([style*="display: none"])').length === 0) {
+                    showResult();
+                }
+            });
+        });
+    });
 
+    function showResult() {
+        let instrument;
+        if (totalPoints <= 10) {
+            instrument = 'Violão';
+        } else if (totalPoints <= 20) {
+            instrument = 'Piano';
+        } else if (totalPoints <= 30) {
+            instrument = 'Canto';
+        } else if (totalPoints <= 40) {
+            instrument = 'Bateria';
+        } else {
+            instrument = 'Violino';
+        }
+        resultInstrument.textContent = instrument;
+        resultSection.classList.remove('hidden');
+    }
+});
 
 // Abrir e fechar pop-ups
 const contactPopup = document.getElementById('contact-popup');
