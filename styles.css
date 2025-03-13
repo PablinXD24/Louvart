@@ -163,7 +163,7 @@ header .logo h1 {
 
 .sobre-content img {
     flex: 1;
-    max-width: 50%;
+    max-width: 25%;
     border-radius: 10px;
 }
 
@@ -195,7 +195,7 @@ header .logo h1 {
 }
 
 .curso-card img {
-    width: 100%;
+    width: 50%;
     border-radius: 10px;
 }
 
@@ -499,33 +499,4 @@ footer {
 
 .popup-content form button:hover {
     background-color: #ff3b2f;
-}
-
-.quiz {
-    padding: 100px 10%;
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
-.quiz-question {
-    margin-bottom: 20px;
-}
-
-.quiz-question button {
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: #ff6f61;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.quiz-question button:hover {
-    background-color: #ff3b2f;
-}
-
-#quiz-result.hidden {
-    display: none;
 }
